@@ -462,7 +462,8 @@
             thumbR.style.width = options.thumbWidth + "px";
             thumbR.style.left = "100%";
 
-            thumbM.onmousedown = function(e) {
+            thumbM.ontouchstart = thumbM.onmousedown = function(e) {
+                if (e.cancelable) { e.preventDefault(); }
                 self.running = true;
 
                 var thumbMCoords = TChart.getCoords(thumbM);
@@ -470,7 +471,8 @@
 
                 var shiftX = e.pageX - thumbMCoords.left;
 
-                document.onmousemove = function(e) {
+                document.ontouchmove = document.onmousemove = function(e) {
+                    if (e.cancelable) { e.preventDefault(); }
                     self.running = true;
 
                     var left = Math.round((e.pageX - shiftX - sliderCoords.left) / sliderCoords.width * 100);
@@ -487,15 +489,17 @@
                     self.x2 = (left + width) / 100;
                 };
 
-                document.onmouseup = function() {
+                document.ontouchend = document.onmouseup = function() {
+                    if (e.cancelable) { e.preventDefault(); }
                     self.running = false;
-                    document.onmousemove = document.onmouseup = null;
+                    document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null;
                 };
 
                 return false;
             };
 
-            thumbL.onmousedown = function(e) {
+            thumbL.ontouchstart = thumbL.onmousedown = function(e) {
+                if (e.cancelable) { e.preventDefault(); }
                 self.running = true;
 
                 var thumbLCoords = TChart.getCoords(thumbL);
@@ -503,7 +507,8 @@
 
                 var shiftX = e.pageX - thumbLCoords.left;
 
-                document.onmousemove = function(e) {
+                document.ontouchmove = document.onmousemove = function(e) {
+                    if (e.cancelable) { e.preventDefault(); }
                     self.running = true;
 
                     var left = Math.round((e.pageX - shiftX - sliderCoords.left) / sliderCoords.width * 100);
@@ -518,15 +523,17 @@
                     self.x1 = left / 100;
                 };
 
-                document.onmouseup = function() {
+                document.ontouchend = document.onmouseup = function() {
+                    if (e.cancelable) { e.preventDefault(); }
                     self.running = false;
-                    document.onmousemove = document.onmouseup = null;
+                    document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null;
                 };
 
                 return false;
             };
 
-            thumbR.onmousedown = function(e) {
+            thumbR.ontouchstart = thumbR.onmousedown = function(e) {
+                if (e.cancelable) { e.preventDefault(); }
                 self.running = true;
 
                 var thumbRCoords = TChart.getCoords(thumbR);
@@ -534,7 +541,8 @@
 
                 var shiftX = e.pageX - thumbRCoords.left;
 
-                document.onmousemove = function(e) {
+                document.ontouchmove = document.onmousemove = function(e) {
+                    if (e.cancelable) { e.preventDefault(); }
                     self.running = true;
 
                     var left = Math.round((e.pageX - shiftX - sliderCoords.left) / sliderCoords.width * 100);
@@ -548,9 +556,10 @@
                     self.x2 = left / 100;
                 };
 
-                document.onmouseup = function() {
+                document.ontouchend = document.onmouseup = function() {
+                    if (e.cancelable) { e.preventDefault(); }
                     self.running = false;
-                    document.onmousemove = document.onmouseup = null;
+                    document.ontouchmove = document.ontouchend = document.onmousemove = document.onmouseup = null;
                 };
 
                 return false;
@@ -561,7 +570,7 @@
             for (var i = 0; i < thumbs.length; i++) {
                 var thumb = thumbs[i];
 
-                thumb.ondragstart = function() {
+                thumb.ontouchstart = thumb.ondragstart = function() {
                     self.running = true;
                     return false;
                 };
@@ -595,8 +604,8 @@
 
                 var checkbox = TChart.createCheckbox(checkboxID, chart.name, chart.color);
 
-                checkbox.onmousedown = function (e) {
-                    if (e.button !== 0) return;
+                checkbox.ontouchstart = checkbox.onmousedown = function (e) {
+                    if (e.type === "mousedown" && e.button !== 0) return;
 
                     self.running = true;
                     self.alpha = 0;
@@ -619,7 +628,7 @@
                     }
                 };
 
-                checkbox.onmouseup = function() {
+                checkbox.ontouchend = checkbox.onmouseup = function() {
                     self.running = false;
                 };
 
