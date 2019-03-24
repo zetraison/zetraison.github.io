@@ -809,7 +809,7 @@
 
         var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-        var day = date.getDay();
+        var day = date.getDate();
         var month = date.getMonth();
 
         return monthNames[month] + " " + day;
