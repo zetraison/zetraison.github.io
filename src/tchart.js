@@ -73,7 +73,7 @@
 
         gridCount: 6,
 
-        font: "12px Arial",
+        font: "11px Arial",
 
         fps: 60
     };
@@ -379,14 +379,16 @@
          * @param options
          */
         drawXAxisTickMarks: function(context, minX, maxX, options) {
+            context.font = options.font;
+
             var gridCount = options.gridCount;
-            var step = Math.round(context.canvas.width / 5);
+            var step = Math.round(context.canvas.width / 6);
 
             var stepValue = Math.round((maxX - minX) / gridCount);
 
             for (var i = 0; i < gridCount; i++) {
                 var value = TChart.timestampToDate(minX + stepValue * i);
-                context.fillText(value, i * step, context.canvas.width - 5);
+                context.fillText(value, i * step + 10, context.canvas.width - 5);
             }
         },
 
@@ -399,6 +401,8 @@
          * @param options
          */
         drawYAxisTickMarks: function(context, minY, maxY, options) {
+            context.font = options.font;
+
             var gridCount = options.gridCount;
             var step = Math.round(context.canvas.height / gridCount);
 
