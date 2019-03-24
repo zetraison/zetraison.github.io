@@ -122,7 +122,7 @@
             this.x2 = 1;
             this.running = false;
             this.alpha = 0;
-            this.delta = 0.05;
+            this.delta = 0.2;
 
             // Create UI
             var root = document.getElementById(id);
