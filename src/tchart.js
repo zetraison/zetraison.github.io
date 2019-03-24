@@ -339,8 +339,6 @@
         drawAxes: function(context, options) {
             var charts = this.charts;
 
-            console.log('axes');
-
             var points = TChart.getChartsPointsFiltered(charts, this.x1, this.x2);
 
             var minX = TChart.getMinXPoint(points);
