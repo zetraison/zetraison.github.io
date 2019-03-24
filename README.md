@@ -40,7 +40,7 @@ var data = {
 };
 
 var options = {
-    cssPath: "../src/css/style.css",
+    cssPath: "../css/style.css",
 
     canvasWidth: 400,
     canvasHeight: 400,
