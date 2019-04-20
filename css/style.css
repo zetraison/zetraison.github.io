@@ -109,27 +109,17 @@ h2 {
     text-decoration: none;
     white-space: nowrap;
     cursor: pointer;
+    background: gray;
+    display: inline;
 }
 
 .tooltip {
     position: absolute;
-    z-index: 1;
-    top: 50px;
-    border-radius: 5px;
-    padding: 10px;
-    transition: opacity .2s;
-    white-space: nowrap;
-}
-
-.tooltip .date {
-    margin-bottom: 10px;
-    font-family: HelveticaNeue,Helvetica,sans-serif;
-}
-
-.tooltip span {
-    display: inline-block;
-    margin-right: 20px;
-    font-size: 13px;
+    cursor: pointer;
+    background: transparent;
+    display: inline;
+    border: 2px solid grey;
+    opacity: 0.5;
 }
 
 .tooltip span b {
