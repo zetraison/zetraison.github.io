@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!***************************!*\
   !*** ./src/core/index.js ***!
   \***************************/
-/*! exports provided: Control, Checkbox, ThemeButton, Tooltip, TChart */
+/*! exports provided: Control, Checkbox, TChart, ThemeButton, Tooltip */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -246,7 +246,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!******************************!*\
   !*** ./src/helpers/index.js ***!
   \******************************/
-/*! exports provided: animate, linear, first, last, min, max, tail, head, fraction, Dom, Exception, getCharts, limit, relative, loadCss, loadJson, raf, roundRange, setupCanvas, timestampToDate, touchHandler */
+/*! exports provided: getCharts, animate, linear, first, last, min, max, tail, head, fraction, Dom, Exception, limit, relative, loadCss, loadJson, raf, roundRange, setupCanvas, timestampToDate, touchHandler */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
