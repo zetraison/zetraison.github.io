@@ -10,6 +10,12 @@ const projects = [
         "description": "A javascript canvas animations samples",
         "github": "https://github.com/zetraison/animations",
         "sampleUrl": "./projects/animations"
+    },
+    {
+        "name": "weather-service",
+        "description": "Weather web service implemented by React.js using openweathermap.org api",
+        "github": "https://github.com/zetraison/es6-weather-service",
+        "sampleUrl": "./projects/weather-service"
     }
 ]
 
